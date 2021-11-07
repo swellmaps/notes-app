@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('generate-docx', [Controller::class, 'index']);
+
+Route::post('read-xlsx', [Controller::class, 'importXlsx']);
+
+Route::post('generate-docx', [Controller::class, 'generateDocx']);
